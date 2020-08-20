@@ -43,11 +43,67 @@
                     <p class="text-center">Your have no nearest users</p>
                 </div>
             @endif
+                <input hidden type="text" id="auth_id" value="{{ Auth::user()->id }}">
+                <input hidden type="text" id="user_id" value="">
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="notificationModal" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Notification</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href=""><span class="text-capitalize" id="like_name"></span> <span id="like_status"></span></a> your profile
+                    If you want to back it! <a onclick="likeBack()" href="#">Click here</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
 @section('js')
     <script>
+        setInterval(function () {
+            getNotification($('#auth_id').val())
+        }, 2000);
+
+        function getNotification(auth_id) {
+            $.ajax({
+                url: '{{ route('user.notification') }}',
+                type: 'POST',
+                data: {
+                    'auth_id': auth_id,
+                    '_token': '{{ csrf_token() }}'
+                },
+                success: function (response) {
+                    if(response.status){
+                        $("#like_name").text(response.user.user.name)
+                        $("#user_id").val(response.user.from)
+
+                        if(response.user.like_dislike===1)
+                            $("#like_status").text('like')
+                        else
+                            $("#like_status").text('dislike')
+
+                        $("#notificationModal").modal('show');
+                    }
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+        function likeBack() {
+            ratingSubmit($('#user_id').val(), 1)
+        }
         function ratingSubmit(user_id, status) {
             $.ajaxSetup({
                 headers: {
@@ -76,7 +132,6 @@
                             location.reload()
                         },2000)
                     }
-                    console.log()
                 }
             })
         }

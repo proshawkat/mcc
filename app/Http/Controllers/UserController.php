@@ -28,6 +28,10 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function rating(Request $request){
         $auth_id = Auth::user()->id;
         $ratingEx = Rating::where('from', $auth_id)->where('to', $request->user_id)->first();
@@ -54,5 +58,26 @@ class UserController extends Controller
             'success' => true,
             'message' => 'Rating update successfully',
         ]);
+    }
+
+    public function notification(Request $request){
+        $newNotif = Rating::with('user')->where('to', $request->auth_id)
+            ->where('status', '!=' , 1)->first();
+//        dd($newNotif);
+        if($newNotif){
+            if($newNotif->status == 0){
+                $newNotif->update(['status'=> 1]);
+                return response()->json([
+                    'status' => true,
+                    'message' => 'like your profile',
+                    'user' =>  $newNotif
+                ]);
+            }else{
+                return response()->json([
+                    'status' => false,
+                    'message' => 'like your profile'
+                ]);
+            }
+        }
     }
 }

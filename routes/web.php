@@ -25,6 +25,7 @@ Route::prefix('user')->group(function() {
     Route::middleware(['auth'])->group(function () {
         Route::get('/user-list', 'UserController@index')->name('user.user_list');
         Route::post('/profile/rating', 'UserController@rating')->name('user.profile.rating');
+        Route::post('/notification', 'UserController@notification')->name('user.notification');
 
         Route::get('/profile', 'ProfileController@index')->name('user.profile');
         Route::post('/profile/update', 'ProfileController@update')->name('user.profile.update');

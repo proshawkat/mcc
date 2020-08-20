@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ef8bd9c-25eb-4f5a-bb52-1b901a4bc265" name="Default Changelist" comment="" />
+    <list default="true" id="7ef8bd9c-25eb-4f5a-bb52-1b901a4bc265" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rating.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rating.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/user_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/user_list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +28,12 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -128,6 +142,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1gIr8gwkFy5DqBB5Y01p5dVR6ou" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -171,7 +186,8 @@
       <workItem from="1597812791554" duration="17598000" />
       <workItem from="1597848573393" duration="7852000" />
       <workItem from="1597890617350" duration="463000" />
-      <workItem from="1597910507285" duration="13122000" />
+      <workItem from="1597910507285" duration="15410000" />
+      <workItem from="1597935425186" duration="6043000" />
     </task>
     <servers />
   </component>
