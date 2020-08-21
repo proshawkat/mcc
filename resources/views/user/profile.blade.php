@@ -81,7 +81,7 @@
                             <div class="col-md-12">
                                 <input type="file" name="photo">
                                 @if( Auth::user()->photo)
-                                    <img width="100" src="{{ url('storage/users/', Auth::user()->photo) }}" alt="">
+                                    <img width="100" src="{{ url('public/storage/users/', Auth::user()->photo) }}" alt="">
                                 @endif
                             </div>
                         </div>

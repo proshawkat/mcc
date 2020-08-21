@@ -18,23 +18,23 @@
                         <a class="nav-link" href="">
                             <div>
                                 @if( Auth::user()->photo)
-                                    <img class="user-img" src="{{ url('storage/users/', Auth::user()->photo) }}" alt="">
+                                    <img class="user-img" src="{{ url('public/storage/users/', Auth::user()->photo) }}" alt="">
                                 @else
                                     @if( Auth::user()->gender == 'male')
-                                        <img class="user-img" src="{{ asset('assets/img/male.png') }}" alt="">
+                                        <img class="user-img" src="{{ asset('public/assets/img/male.png') }}" alt="">
                                     @else
-                                        <img class="user-img" src="{{ asset('assets/img/female.png') }}" alt="">
+                                        <img class="user-img" src="{{ asset('public/assets/img/female.png') }}" alt="">
                                     @endif
                                 @endif
                                     {{ Auth::user()->name }}
                             </div>
                         </a>
                         <a class="nav-link" href="{{ route('user.user_list') }}">
-                            <img src="{{ asset('assets/img/users_icon.png') }}" alt="">
+                            <img src="{{ asset('public/assets/img/users_icon.png') }}" alt="">
                             User List
                         </a>
                         <a class="nav-link" href="{{ route('user.profile') }}">
-                            <img class="user-img" src="{{ asset('assets/img/settings.png') }}" alt="">
+                            <img class="user-img" src="{{ asset('public/assets/img/settings.png') }}" alt="">
                             Profile
                         </a>
                     </div>

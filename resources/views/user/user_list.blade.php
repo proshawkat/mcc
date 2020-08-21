@@ -8,12 +8,12 @@
                     <div class="col-xl-6 col-md-6">
                         <div class="card user-list-card mb-3">
                             @if($user->photo)
-                                <img src="{{ url('storage/users/', $user->photo) }}" class="card-img-top user-profile-img" alt="{{ $user->name }}">
+                                <img src="{{ url('public/storage/users/', $user->photo) }}" class="card-img-top user-profile-img" alt="{{ $user->name }}">
                             @else
                                 @if( $user->gender == 'male')
-                                    <img src="{{ asset('assets/img/male.png') }}" class="card-img-top user-profile-img" alt="{{ $user->name }}">
+                                    <img src="{{ asset('public/assets/img/male.png') }}" class="card-img-top user-profile-img" alt="{{ $user->name }}">
                                 @else
-                                    <img src="{{ asset('assets/img/female.png') }}" class="card-img-top user-profile-img" alt="{{ $user->name }}">
+                                    <img src="{{ asset('public/assets/img/female.png') }}" class="card-img-top user-profile-img" alt="{{ $user->name }}">
                                 @endif
                             @endif
                             <div class="card-body">
